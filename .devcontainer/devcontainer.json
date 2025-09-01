@@ -1,0 +1,21 @@
+{
+  "name": "AI4Devs Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "Prisma.prisma",
+        "ms-vscode.vscode-json",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss"
+      ]
+    }
+  },
+  "postCreateCommand": "npm install && cd backend && npm install && cd ../frontend && npm install && docker-compose up -d",
+  "forwardPorts": [3000, 3001, 5432],
+  "remoteUser": "node"
+}
